@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>RegistrationSystem.html</title>
+<style>
+	table{
+		border: 5px;  font-size: 12px;
+		text-align: left; border-spacing: 5px;
+		padding: 10px; 
+	}
+	.body{
+		height: 250px;
+		overflow-y: scroll;
+	}
+	span{
+		margin-right: 50px;
+	}
+	#id{
+		width: 100px;
+	}
+	#idbutton{
+		width: 100px
+	}
+	#pw{
+		width: 100px;
+	}
+	#pwcheck{
+		width: 100px;
+	}
+	#pwmessage{
+		width: 300px; text-align:left;
+	}
+	#name{
+		width: 100px;
+	}
+	#bday{
+		width: 70px;
+	}
+	#email{
+		width: 100px;
+	}
+	#phone1{
+		width: 50px;
+	}
+	#phone2{
+		width: 50px;
+	}
+	#phone3{
+		width: 50px;
+	}
+	#postalcode{
+		width: 50px;
+	}
+	#address{
+		width: 100px;
+	}
+	#address2{
+		width: 100px;
+	}
+
+</style>
+</head>
+
+
+<body>
+
+	<br>
+	<table>
+
+		<tr>
+			<td colspan="4" style="font-size: 20px; font-weight: bold;
+			padding-top:10px; padding-bottom: 10px;">
+				회원정보<span style="color: red;">(필수)</span></td>
+		</tr>
+
+		<tr>
+			<td style="width: 120px;">아이디</td>
+
+			<td style="font-size: 10px;">
+				<form action="./form/request_form.jsp" method="get"></form>
+				<input id="id" type="text" name="user_id" placeholder="4자리이상"/>
+			</td>
+
+			<td style="font-size: 8px">
+				<input id="idbutton" type="submit" value="아이디중복확인" 
+				style="background-color:#00AFA0; color: white; font-size: 8px; height: 28px;">				
+			</td>
+
+			<td id="pwmessage" style="font-size: 9px; color: red; text-align:left;">
+				아이디 형식에 맞춰주세요(영문,숫자조합 4문자이상)
+			</td>
+		</tr>
+
+		<tr>
+			<td style="width: 120px;">비밀번호</td>
+			<td>
+				<input id="pw" type="password" name="user_pwd" placeholder="fdfdf"/>
+			</td>
+			<td colspan="2" style="font-size: 9px; color: grey; opacity: 0.8;">
+				8~20자리의 영문,숫자조합(영문, 숫자, 특수 기호 조합을 권장합니다)
+			</td>
+
+		</tr>
+
+		<tr>
+			<td style="width: 120px;">비밀번호확인</td>
+			<td>
+				<input id="pwcheck" type="password" name="user_pwd" placeholder="dfdfdfd"/>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="width: 120px;">이름</td>
+			<td><input id="name" type="password" name="yourname"/></td>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td style="width: 120px;">성별</td>
+			<td>
+				<form name="genders" style="font-size: 8px;">
+					<input type="radio" name="gender" value="M" checked="checked"/> 남자
+							&nbsp;
+					<input type="radio" name="gender" value="W"/> 여자		
+					</form>
+			</td>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td>생년월일</td>
+			<td colspan="2">
+				<form action="./form/request_form.jsp" method="get" style="font-size: 8px;">
+					<input id="bday" type="text" name="bday">
+			<span style="font-size: 8px;">
+				<input type="radio" name="yang" value="y" checked="checked">양력
+					&nbsp;
+					<input type="radio" name="eum" value="e">음력	
+					</form>
+					</span>
+			</td>
+		</tr>
+
+		<tr>
+			<td rowspan="2" style="width: 120px;">email</td>
+			<td><form action="./form/request_form.jsp" method="get">
+				<input id="email" type="text" name="email" />
+			</td>
+			<td colspan="2">
+			@ <input id="address" type="text" value="">
+				<select name="adrr">
+					<option value="nate">nate.com</option>
+					<option value="naver">naver.com</option>
+					<option value="hanmail">hanmail.net</option>
+					<option value="yahoo">yahoo.co.kr</option>
+				</select>
+				&nbsp;&nbsp;
+			</td>				
+		</tr>
+		
+		<tr>
+			<td colspan="3" style="font-size: 8px; color:gray; text-align: left">
+				메일 수신동의 시, 신상품/할인혜택/이벤드 등의 정보를 받아보실 수 있습니다.
+				<br>수신동의 거부 시에도 기본 서비스(주문배송 메일)는 발송됩니다.
+			</td>						
+		</tr>
+	
+		<tr>
+			<td rowspan="2" style="width: 120px;">휴대전화</td>
+			<td colspan="2">
+				<form action="./form/request_form.jsp" method="get">
+					<input id="phone1" type="text" name="phone" /> - 
+					<input id="phone2" type="text" name="phone" /> - 
+					<input id="phone3" type="text" name="phone" />
+
+			</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<!--rowspan-->
+			<td colspan="3" style="font-size: 8px; color:gray; text-align: left ;">
+			할인혜택과 이벤트 등의 소실 안내를 SMS로 받으실 수 있습니다.
+			<br>수신동의 거부 시에도 기본서비스는 발송됩니다.
+			<span>
+				<input type="radio" name="yang" value="y" checked="checked">예
+					&nbsp;
+					<input type="radio" name="eum" value="e">아니오
+			
+			</span>
+			</td>
+			<td></td>
+		</tr>		
+		
+	</table>
+	<br><br>
+
+	<table style="background-color: #F5F5F5; width: 700px; " >
+		<tr>
+			<td colspan="4" style="font-size: 20px; font-weight: bold;
+			padding-top:10px; pading-bottom: 10px;">
+				부가정보 <span style="color: red;">(선택)</span></td>
+		</tr>
+		
+		<tr>
+			<td style="width: 120px;">일반전화</td>
+			<td colspan="3"> 
+				<form action="./form/request_form.jsp" method="get">
+					<input id="phone1" type="text" name="phone" /> - 
+					<input id="phone2" type="text" name="phone" /> - 
+					<input id="phone3" type="text" name="phone" />
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2"	style="width: 120px;">직업</td>
+			<td>
+				<form action="./form/request_form.jsp" method="get">
+					<input id="postalcode" type="text" name="postalcode" />
+					<input id="idbutton" type="submit" value="우편번호검색" 
+				style="background-color:#00AFA0; color: white; font-size: 8px;height: 28px;">
+
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<!--<td>rowspan</td>-->
+			<td colspan="2"><form action="./form/request_form.jsp" method="get">
+				<input id="address" type="text" name="postalcode" />
+				<input id="address2" type="text" name="postalcode" placeholder="상세주소"/>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>직업</td>
+			<td colspan="3">
+				<input id="job" type="text" value="">
+				<select name="선택" style="font-size: 8px; height: 12px;">
+					<option value="">사무직</option>
+					<option value="naver">교육</option>
+					<option value="hanmail">예체능</option>
+					<option value="yahoo">기술</option>
+					<option value="yahoo">기타</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3">관심브랜드</td>
+			<td colspan="3">
+				<span>
+					<input type="checkbox" name="ch" size="6"/>한빛미디어
+				</span>
+				<span>
+					<input type="checkbox" name="ch" size="6"/>한빛아카데미				
+				</span>
+				<span>
+					<input type="checkbox" name="ch" size="6"/>한빛비즈				
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<span>
+					<input type="checkbox" name="ch" size="6"/>한빛라이프
+				</span>
+				<span>
+					<input type="checkbox" name="ch" size="6"/>리얼타임eBook				
+				</span>
+				<span>
+					<input type="checkbox" name="ch" size="6"/>MAKE			
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<!--<td>rowspan</td>-->
+			<td colspan="3">
+				<span>
+					<input type="checkbox" name="ch" size="6"/>한빛에듀
+				</span>
+		</tr>
+		<tr>
+			<td rowspan="3">관심분야</td>
+			<td rowspan="3">
+				<span style="margin-right:0px;">
+					<input type="checkbox" name="ch" size="6"/>요리/베이킹
+					<br>
+				</span>
+				<span style="text-align: left;">
+					<input type="checkbox" name="ch" size="6"/>원예/조경				
+				</span>
+				<br>
+				<span style="text-align: left;">
+					<input type="checkbox" name="ch" size="6"/>유아교육				
+				</span>
+			</td>
+			<td rowspan="3">
+				<span style="margin-right:0px;">
+					<input type="checkbox" name="ch" size="6"/>디자인
+					<br>
+				</span>
+				<span>
+					<input type="checkbox" name="ch" size="6"/>인문/사회
+					<br>				
+				</span>
+				<span>
+					<input type="checkbox" name="ch" size="6"/>사회복지				
+				</span>
+			</td>
+			<td rowspan="3">
+				<span>
+					<input type="checkbox" name="ch" size="6"/>외국어
+					<br>
+				</span>
+				<span>
+					<input type="checkbox" name="ch" size="6"/>제조/기술		
+					<br>		
+				</span>
+				<span>
+					<input type="checkbox" name="ch" size="6"/>기타				
+				</span>
+			</td>
+		</tr>
+
+		
+	</table>
+
+</body>
+</html>

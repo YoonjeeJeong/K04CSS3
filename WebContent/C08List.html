@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #topmenu li{
+            /*1. block속성을 인라인 속성으로 변경
+              2. 각각의 li태그 오른쪽 테두리를 2px로 지정.
+              3. 오른쪽 패딩으로 간격을 띄워준다*/
+            display: inline;
+            border-right: 2px gray solid;
+            padding-right: 7px;
+        }
+        #topmenu li:last-child{
+            /* 마지막 li태그의 border를 제거한다*/
+            border: none;
+        }
+        #topmenu li a{
+            /* 링크가 있는 부분에 밑줄을 제거 및 색깔 적용*/
+            text-decoration: none;
+            color: black;
+        }
+        #topmenu li a:hover{
+            /* 링크에 마우스 오버시 밑줄처리 및 색깔 적용*/
+            text-decoration: underline; color: silver;
+        }
+        .sport {
+            /* 불릿의 모양, 위치 설정. 위치가 inside인 경우에는
+            불릿이 영역안쪽으로 표시된다.*/
+            border: 5px solid blue;
+            list-style-type: upper-roman;
+            list-style-position: inside;
+        }
+        .sport li{
+            border: 1px solid red;
+        }
+        .food_image{
+            /*기본 불릿 대신 커스텀 이미지로 설정*/
+            list-style-image: url('./images/bullet.png');
+        }
+        .bullet{
+            /*리스트에서 불릿만 제거. 이 경우 불릿이 있던 부분에
+            들여쓰기 효과가 있으므로 마진을 음수값으로 적용하여
+            좌측으로 위치를 옮겨준다*/
+            list-style-type: none;
+            border: 1px solid yellowgreen;
+            margin-left: -30px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h2>UL/OL/Li 태그로 상단 메뉴 구성하기</h2> 
+<!--fieldset>legend+ul#topmenu>(li>a[href=#])*5-->
+<fieldset>
+    <legend>Top메뉴</legend>
+    <ul id="topmenu">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">장바구니</a></li>
+        <li><a href="#">고객센터</a></li>
+    </ul>
+</fieldset>
+
+<fieldset>
+    <legend>당신이 가장 좋아하는 스포츠는?</legend>
+    <ul class="sport">
+        <li>축구</li>
+        <li>야구</li>
+        <li>배구</li>
+        <li>농구</li>
+        <li>핸드볼</li>
+    </ul>
+</fieldset>    
+
+<fieldset>
+    <legend>당신이 좋아하는 음식은?</legend>
+    <ul class="food_image">
+        <li>짜장면</li>
+        <li>짬뽕</li>
+        <li>피자</li>
+        <li>파스타</li>
+        <li>된장찌개</li>
+    </ul>
+</fieldset> 
+
+<fieldset>
+    <legend>당신이 좋아하는 위인은?</legend>
+    <h3>불릿만 제거하기</h3>
+    그냥 텍스트
+    <ul class="bullet">
+        <li>세종대왕</li>
+        <li>이순신</li>
+        <li>정조대왕</li>
+    </ul>
+</fieldset>     
+   
+
+
+</body>
+</html>
